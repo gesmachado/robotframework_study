@@ -20,7 +20,7 @@ Print Remaining Time Seconds
 Create Excel File
   [arguments]  ${excel_file}
 
-  ${excel_path}  Set Variable    ${EXECDIR}/search_product/search_item_${excel_file}.xlsx
+  ${excel_path}  Set Variable    ${EXECDIR}/robotframework_project/project_search_product/search_item_${excel_file}.xlsx
 
   Create Excel Document 	doc_id=docname1
   Save Excel Document    filename=${excel_path}
@@ -31,7 +31,7 @@ Create Excel File
 Write Excel File
   [arguments]  ${row}  ${col}  ${value}  ${excel_file}
 
-  ${excel_path}  Set Variable    ${EXECDIR}/search_product/search_item_${excel_file}.xlsx
+  ${excel_path}  Set Variable    ${EXECDIR}/robotframework_project/project_search_product/search_item_${excel_file}.xlsx
   Log To Console    message=Linha:${row}/Coluna:${col} -> ${value}
 
   Open Excel Document    filename=${excel_path}   doc_id=docname1

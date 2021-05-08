@@ -7,13 +7,13 @@ Suite Setup     New Session    ${BROWSER}
 Suite Teardown  Close Session
 
 *** Variables ***
-# Para executar o test: robot -d .\results -L trace search_product\test_search_product\test_search_product.robot
+# Para executar o test: robot -d .\results -L trace robotframework_project\project_search_product\test_search_product\test_search_product.robot
 # Foram utilizados várivaies globais hard-coded propositalmente
 # Pesquisa é feita em um site por vez e um produot por vez
 ${IP_SEARCH}      https://www.amazon.com.br/
 ${BROWSER}        gc
-${PRODUCT}        projetor    #Naruto Gold Vol. 60  Bleach
-${EXCEL_FILE}     projetor              #naruto_60            bleach
+${PRODUCT}        boruto    #Naruto Gold Vol. 60  Bleach
+${EXCEL_FILE}     boruto              #naruto_60            bleach
 
 *** Test Cases ***
 Test - Search For Product on a Website
