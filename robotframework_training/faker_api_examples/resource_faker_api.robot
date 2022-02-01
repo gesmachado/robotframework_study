@@ -28,6 +28,7 @@ Get Address
 
   # Printing
   Print itens     ${response}
+  Print specific iten value    response=${response}    key=street
 
 Get Companies
   [arguments]  ${alias}  ${qtd}=10
@@ -135,6 +136,22 @@ Print itens
   FOR  ${i}  IN RANGE  ${response_total_item}
 
     ${response_data_item_full}   Convert To String    ${response.json()["data"][${i}]}
+    Log To Console    message=**************************************************
+    Log To Console    message=**** Item Completo de número ${i} ****
+    Log To Console    message=${response_data_item_full}
+    Log To Console    message=\n
+  END
+  #
+  # [return]  ${response_json_id}
+
+Print specific iten value
+  [arguments]  ${response}  ${key}
+
+  ${response_total_item}   Convert To String    ${response.json()["total"]}
+
+  FOR  ${i}  IN RANGE  ${response_total_item}
+
+    ${response_data_item_full}   Convert To String    ${response.json()["data"][${i}]["${key}"]}
     Log To Console    message=**************************************************
     Log To Console    message=**** Item Completo de número ${i} ****
     Log To Console    message=${response_data_item_full}
